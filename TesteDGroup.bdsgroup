@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{009A7898-ECA4-4769-83E9-022AB4EAD6CD}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    <Projects>
+      <Projects Name="TesteD.exe">TesteD.bdsproj</Projects>
+      <Projects Name="TesteDClient.exe">TesteDClient.bdsproj</Projects>
+      <Projects Name="Targets">TesteD.exe TesteDClient.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8F15AE73-A7F0-4C39-8D8B-2476859FB109}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TesteD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TesteDClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TesteD">
+        <MSBuild Projects="TesteD.dproj"/>
+    </Target>
+    <Target Name="TesteD:Clean">
+        <MSBuild Projects="TesteD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteD:Make">
+        <MSBuild Projects="TesteD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TesteDClient">
+        <MSBuild Projects="TesteDClient.dproj"/>
+    </Target>
+    <Target Name="TesteDClient:Clean">
+        <MSBuild Projects="TesteDClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteDClient:Make">
+        <MSBuild Projects="TesteDClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TesteD;TesteDClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TesteD:Clean;TesteDClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TesteD:Make;TesteDClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
